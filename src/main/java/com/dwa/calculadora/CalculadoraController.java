@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class CalculadoraController {
-	@GetMapping("/calculadora")
+	@GetMapping("/")
 	public String Index(Model modelo) {
 		
 		modelo.addAttribute("calcu",new Calculadora());
-		return "/calculadora/index";
+		return "index";
 	}
 	
 	@PostMapping("/resultado")
@@ -20,6 +20,6 @@ public class CalculadoraController {
 		
 		calcu.Calcular();
 		modelo.addAttribute("calcu",calcu);
-		return "/calculadora/index";
+		return "index";
 	}
 }
